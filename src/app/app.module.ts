@@ -7,18 +7,27 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { FormsModule } from '@angular/forms'
 import { GetphotoService } from './services/getphoto.service'
 import { HttpModule } from '@angular/http'
+import { RouterModule , Routes} from '@angular/router';
+import { PhotoComponent } from './components/photo/photo.component'
 
+const appRoutes:Routes = [
+  {path:"" , component:UserComponent},
+  {path:"about" , component:AboutusComponent},
+  {path:"homework" , component:PhotoComponent}
+]
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
-    AboutusComponent
+    AboutusComponent,
+    PhotoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(appRoutes)
 
   ],
   providers: [GetphotoService],
